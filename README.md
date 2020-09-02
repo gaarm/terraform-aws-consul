@@ -4,7 +4,7 @@ This repo demonstrates how to create Consul cluster in AWS using Terraform.
 
 ## Prerequisites
 
-Following things are required in order to be able to run these scripts:
+Following things are required in order to be able to run these scripts:  
 0. [Terraform](https://www.terraform.io/intro/getting-started/install.html)  
 1. AWS account. For more info please check following section [Understanding and getting your AWS credentials](https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html).
 
