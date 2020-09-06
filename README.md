@@ -21,11 +21,11 @@ terraform plan
 # Execute a plan. Create a cluster!
 terraform apply
 ```
+Navigate to port 8500 of. Use any public IP address taken from output. 
+
 > Note 1: please change default values in `variables.tf` file according to your needs.  
 > Note 2: Encryption key can be generated upfront ony any node with Consul service installed.   
 > Note 3: VPC, Subnet, security groups should exist prior to execution of these scripts.   
-
-Navigate to port 8500 of. Use any public IP address taken from output. 
 
 ## Destroying the Cluster
 
