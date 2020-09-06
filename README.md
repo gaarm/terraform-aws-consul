@@ -21,9 +21,9 @@ terraform plan
 # Execute a plan. Create a cluster!
 terraform apply
 ```
-> Note 1: please change default values in `variables.tf` file according to your needs.
-> Note 2: Encryption key can be generated upfront ony any node with Consul service installed.
-> Note 3: VPC, Subnet, security groups should exist prior to execution of these scripts.
+> Note 1: please change default values in `variables.tf` file according to your needs.  
+> Note 2: Encryption key can be generated upfront ony any node with Consul service installed.   
+> Note 3: VPC, Subnet, security groups should exist prior to execution of these scripts.   
 
 Navigate to port 8500 of. Use any public IP address taken from output. 
 
@@ -50,7 +50,7 @@ scripts/                  # Scripts used during provisiong process
 Please check [Required Ports](https://www.consul.io/docs/install/ports) section.
 
 ## Next steps or what is missing?
-We should add scripts to create VPC, subnet, security group. Currently default ones are being used.
-Once important thing to work on is also additional parametrization which should be added in order scripts can become more complete.
+We should add scripts to create VPC, subnet, security group. Currently default ones are being used.  
+One important thing to work on is also additional parametrization which should be added in order scripts can become more complete.
 
 > This scripts were tested with Terraform v0.13.2 
