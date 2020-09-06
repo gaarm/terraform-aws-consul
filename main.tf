@@ -42,8 +42,8 @@ resource "aws_instance" "consul_node" {
   provisioner "remote-exec" {
     inline = [
       "sh /tmp/wait.sh",
-      "sed -i 's/CONSUL_VERSION/${var.consul_version}/g' /tmp/provision.sh",
-      "sed -i 's/BOOTSTRAP_EXPECT/${var.node_count}/g' /tmp/server.hcl",
+      "sed -i 's|CONSUL_VERSION|${var.consul_version}|g' /tmp/provision.sh",
+      "sed -i 's|BOOTSTRAP_EXPECT|${var.node_count}|g' /tmp/server.hcl",
       "sudo sh /tmp/provision.sh",
     ]
   }
@@ -54,7 +54,7 @@ resource "aws_instance" "consul_node" {
   }
 }
 
-resource "null_resource" "hosts_file" {
+resource "null_resource" "finalize" {
   depends_on = [aws_instance.consul_node]
   count      = var.node_count
 
