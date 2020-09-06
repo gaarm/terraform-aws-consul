@@ -42,7 +42,6 @@ resource "aws_instance" "consul_node" {
   provisioner "remote-exec" {
     inline = [
       "sh /tmp/wait.sh",
- #     "hostnamectl set-hostname consul${count.index + 1}",
       "sed -i 's/CONSUL_VERSION/${var.consul_version}/g' /tmp/provision.sh",
       "sed -i 's/BOOTSTRAP_EXPECT/${var.node_count}/g' /tmp/server.hcl",
       "sudo sh /tmp/provision.sh",
@@ -69,8 +68,8 @@ resource "null_resource" "hosts_file" {
 
   provisioner "remote-exec" {
     inline = [
-      "sudo mv /tmp/consul.service /etc/systemd/system/",
-      "sed -i 's/PRIVATE_IPS/${join("\", \"", aws_instance.consul_node.*.private_ip)}/g' /tmp/consul.hcl",
+      "sed -i 's|ENCRYPTED_KEY|${var.consul_encrypted_key}|g' /tmp/consul.hcl",
+      "sed -i 's|PRIVATE_IPS|${join("\", \"", aws_instance.consul_node.*.private_ip)}|g' /tmp/consul.hcl",
       "sudo mv /tmp/consul.hcl /etc/consul.d",
       "sudo chown --recursive consul:consul /etc/consul.d",
       "sudo chmod 640 /etc/consul.d/consul.hcl",

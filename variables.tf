@@ -1,10 +1,3 @@
-variable "AWS_ACCESS_KEY_ID" {
-  default = "$(aws configure get aws_access_key_id)"
-}
-variable "AWS_SECRET_ACCESS_KEY" {
-  default = "$(aws configure get aws_secret_access_key)"
-}
-
 variable "node_count" {
   default = 4
 }
@@ -39,4 +32,8 @@ variable "cluster_member_name_prefix" {
 
 variable "consul_version" {
   default = "1.8.3"
+}
+
+variable "consul_encrypted_key" {
+  default = "qDOPBEr+/oUVeOFQOnVypxwDaHzLrD+lvjo5vCEBbZ0="
 }

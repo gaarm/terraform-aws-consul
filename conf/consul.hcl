@@ -1,6 +1,6 @@
 datacenter = "dc1"
 data_dir = "/opt/consul"
-encrypt = "qDOPBEr+/oUVeOFQOnVypxwDaHzLrD+lvjo5vCEBbZ0="
+encrypt = "ENCRYPTED_KEY"
 verify_incoming = false
 verify_outgoing = false
 verify_server_hostname = false

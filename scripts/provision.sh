@@ -12,3 +12,4 @@ mkdir --parents /etc/consul.d
 mv /tmp/server.hcl /etc/consul.d
 chown --recursive consul:consul /etc/consul.d
 chmod 640 /etc/consul.d/server.hcl
+mv /tmp/consul.service /etc/systemd/system/
