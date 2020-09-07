@@ -50,7 +50,8 @@ scripts/                  # Scripts used during provisiong process
 Please check [Required Ports](https://www.consul.io/docs/install/ports) section.
 
 ## Next steps or what is missing?
-We should add scripts to create VPC, subnet, security group. Currently default ones are being used.  
-One important thing to work on is also additional parametrization which should be added in order scripts can become more complete.
+ - Add scripts to create VPC, subnet, security group. Currently default ones are being used.  
+ - One important thing to work on is also additional parametrization which should be added in order scripts can become more complete.
+ - Don't use public ami, but create your own one
 
 > This scripts were tested with Terraform v0.13.2 
